@@ -14,14 +14,19 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: configure
-      run: ./configure
+    - name: Set up Python 3.10
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.10
       
     - name: Install dependencies
-      run: make
+      run: make install
       
-    - name: Run check
-      run: make check
+    - name: Formating
+      run: make format
       
-    - name: Run distcheck
-      run: make distcheck
+    - name: Linting
+      run: make lint
+
+    - name: Testing
+      run: make test
