@@ -1,3 +1,8 @@
 #private files
 .*
+
+#keep .gitignore
 !.gitignore
+
+#cache
+__pycache__
