@@ -6,12 +6,13 @@ install:
 	pip install -r requirements.txt
 
 format:
-	#format
+	black .
 
 lint:
-	pylint ./*.py ./*/*.py
+# 	pylint --disable=R,C,E1120 ./*.py ./*/*.py
+	pylint  ./*.py ./*/*.py
 
 test:
-	#test
+	pytest -v
 
 all: install format lint test
